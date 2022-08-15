@@ -1,5 +1,5 @@
 <h1>Nasa Rover Photo Viewer</h1>
-<h3>utilizing NodeJS and Ajax </h3>
+<h3>utilizing NodeJS, Ajax and sqlite3</h3>
 <h2>By Amit Eindor</h2>
 
 <h1>Description</h1>
