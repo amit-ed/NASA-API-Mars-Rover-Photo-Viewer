@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="Javascripts/mainJs.js"></script>
+    <title>Nassa Mars Photo Viewer</title>
+</head>
+<body class="vh-100 bg-image"
+      style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">>
+
+<div class="container-fluid text-center ">
+    <!-------------------------- the head picture --------------------------->
+
+    <%- include('includes/image.ejs') %>
+    <div class="row justify-content-left">
+        <div class="col-auto">
+            <div class="card bg-dark text-white"><h3>Welcome back <%= userName %> !</h3></div>
+        </div>
+        <div class="col-auto">
+            <form action="/main/logout" method="POST">
+                <button type="submit" value="submit"
+                        class="card bg-dark text-danger">
+                    <h3>Log out</h3>
+                </button>
+            </form>
+        </div>
+    </div>
+    <br>
+    <!-----------------------  search form -------------------------->
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-sm-12">
+
+            <div class="card bg-primary text-white" id="SearchForImages">Search for images:</div>
+            <div class="text-danger errormessage"></div>
+            <br>
+
+            <form id="form">
+                <label for="Date">Date (YYYY-MM-DD) or Sol:</label>
+                <input type="text" name="textbox" id="Date" class="form-control" placeholder="type here">
+                <div class="text-danger errormessage"></div>
+                <br>
+
+                <label for="SelectRover">Select Camera</label><br>
+                <select id="SelectRover" class="form-control">
+                    <option value='0' selected>Choose Rover</option>
+                    <option value="Curiosity">Curiosity</option>
+                    <option value="Opportunity">Opportunity</option>
+                    <option value="Spirit">Spirit</option>
+
+                </select>
+                <div class="text-danger errormessage"></div>
+                <br>
+
+                <label for="SelectCamera">Select Rover</label><br>
+                <select id="SelectCamera" class="form-control">
+                    <option value="0" selected>Choose a Camera</option>
+                    <option value="fhaz">Front Hazard Avoidance Camera</option>
+                    <option value="rhaz">Rear Hazard Avoidance Camera</option>
+                    <option value="mast">Mast Camera</option>
+                    <option value="chemcam">Chemistry and Camera Complex</option>
+                    <option value="mahli">Mars Hand Lens Imager</option>
+                    <option value="mardi">Mars Descent Imager
+                    </option>
+                    <option value="navcam">Navigation Camera</option>
+                    <option value="pancam">Panoramic Camera</option>
+                    <option value="minites">Miniature Thermal Emission
+                        Spectrometer (Mini-TES)
+                    </option>
+                </select>
+
+                <br>
+                <button type="submit" class="btn btn-dark" id="search">search</button>
+                <button type="reset" class="btn btn-dark" id="clear">clear</button>
+                <div id="gif"></div>
+                <input type="hidden" id='email' name="email" value="<%= email %>">
+            </form>
+        </div>
+        <!-----------------------  image list -------------------------->
+
+        <div class="col-lg-6 col-sm-12">
+
+            <div class="card bg-primary text-white">Saved images:</div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-sm-12">
+                    <a href="/api/removeall">
+                        <button type="button" class="btn btn-danger">clear all</button>
+                    </a>
+                </div>
+            </div>
+            <button type="button" class="btn btn-dark" id="Startslideshow">Start slide show</button>
+            <button type="button" class="btn btn-dark" id="Stopslideshow">Stop slide show</button>
+            <div>
+                <div id="list"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-------------------------     carousel    ----------------------------->
+    <div class="row justify-content-center">
+        <div class="col-12" align="center">
+            <div id="carouselExampleControls" class="carousel slide h-10 w-50 " data-bs-ride="carousel"
+                 hidden="hidden">
+                <div class="carousel-inner" id="carousel-inner">
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------->
+    <div class="row">
+        <div class="col">
+            <div class="card bg-primary text-white" id="SearchResults">Search results:</div>
+            <br>
+        </div>
+    </div>
+    <div class="row justify-content-center" id="data"></div>
+
+</div>
+<!------------------------------------------------------------------------>
+<%- include('includes/end.ejs') %>
