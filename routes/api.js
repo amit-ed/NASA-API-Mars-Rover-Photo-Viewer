@@ -49,6 +49,19 @@ router.post('/deleteImage/:id', function (req, res, next) {
     }
 });
 //================================================================================
+//For dev use find and present all users (with all of their info)
+router.get('/findall', (req, res) => {
+    return db.User.findAll()
+        .then((alldata) =>
+        {
+            res.send(alldata)
+        })
+        .catch((err) => {
+            console.log('error', JSON.stringify(err))
+            return res.send({message: err})
+        });
+});
+//================================================================================
 //remove all images from user's list, works the same as previous func
 router.get('/removeall', function (req, res, next) {
     if (!req.session.logged) res.redirect('/main');
