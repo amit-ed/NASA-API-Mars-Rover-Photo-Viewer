@@ -3,7 +3,7 @@ var router = express.Router();
 //if user not connected go to login page
 router.get('/',function (req,res){
     if(req.session.logged)
-        res.render('main', {userName:req.session.userName, email:req.session.email});
+        res.render('main', {title: "Home", userName:req.session.userName, email:req.session.email});
     else res.redirect('/login');
 });
 
@@ -14,7 +14,7 @@ router.post('/', function (req, res, next) {
     req.session.email=req.body.email.toLowerCase();
     req.session.password=req.body.password;
     req.session.userName=req.body.userName;
-    res.render('main', {userName:req.session.userName, email:req.body.email});
+    res.render('main', {title: "Home", userName:req.session.userName, email:req.body.email});
 });
 
 router.post('/logout', function (req, res) {
