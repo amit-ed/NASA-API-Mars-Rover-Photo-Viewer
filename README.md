@@ -30,4 +30,3 @@ Then open your browser at http://localhost:3000
   The site utilize Bootstap CDN therefore assumes an internet connection is available.
 You would need a connection to the NASA servers, if the servers are down error message will pop.
 </p>
-
