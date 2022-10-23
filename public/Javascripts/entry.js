@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
             //fetching the check email using the email typed in the form
             //to see if that email is already taken
             fetch(`/formHandler/checkEmail/${document.getElementById("email").value.toLowerCase()}`)
-                .then(function (response) {
+                .then((response) => {
                     return response.json();
                 })
-                .then(function (data) {
+                .then((data) => {
                     if (!data.emailExist) { //incase the email doesnt exist
                         document.getElementById("registerForm").submit();
                     } else {    //if the email already taken send an error
@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 //========================================================
     if (document.getElementById("loginForm"))
-        (document.getElementById("loginForm")).addEventListener("submit", function (e) {
+        (document.getElementById("loginForm")).addEventListener("submit", (e) => {
             e.preventDefault(); // prevent the form from submitting and moving on to the next page
             //fetching to check if that email and password (parameters) are inside the database as a user
             fetch(`/formHandler/checkLogin/${document.getElementById("email").value.toLowerCase()}/${document.getElementById("password").value}`)
-                .then(function (response) {
+                .then((response) => {
                     return response.json();
-                }).then(function (data) {
+                }).then((data) => {
                 if (data.userVerified) { //get the answer as json
                     document.getElementById("userName").value = data.userName;  //set the hidden value
                     document.getElementById("loginForm").submit();  //move on to the main page
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 //========================================================
     if (document.getElementById("passwordForm"))
-        (document.getElementById("passwordForm")).addEventListener("submit", function (e) {
+        (document.getElementById("passwordForm")).addEventListener("submit", (e) => {
             e.preventDefault(); // prevent the form from submitting and moving on to the next page
             let string1 = document.getElementById("password").value;
             let string2 = document.getElementById("password2").value;

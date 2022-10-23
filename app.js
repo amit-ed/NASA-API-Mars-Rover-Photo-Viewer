@@ -11,7 +11,6 @@ var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
 var passwordRouter = require('./routes/password');
 var mainRouter = require('./routes/main');
-
 var app = express();
 
 // view engine setup
@@ -28,7 +27,6 @@ app.use(session({
     secret:"somesecretkey",
     resave: false, // Force save of session for each request
     saveUninitialized: true, // Save a session that is new, but has not been modified
-
 }));
 
 app.use('/', indexRouter);

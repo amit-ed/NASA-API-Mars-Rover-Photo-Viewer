@@ -6,3 +6,17 @@ body {
 a {
   color: #00B7FF;
 }
+
+.linkButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: arial, sans-serif;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+body {
+  background-image: url('https://images.pexels.com/photos/7134999/pexels-photo-7134999.jpeg');
+}

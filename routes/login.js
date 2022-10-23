@@ -33,4 +33,16 @@ router.get('/', function (req, res, next) {
         {title: 'login',message:'',form: "loginForm.ejs"});
 });
 
+//============================================================
+router.post('/register', function (req, res, next) {
+    res.render('index',
+        {title: 'Register',message: '',form: "registerForm.ejs"});
+});
+
+//============================================================
+router.get('/register', function (req, res, next) {
+    res.render('index',
+        {title: 'Register',message: '',form: "registerForm.ejs"});
+});
+
 module.exports = router;
