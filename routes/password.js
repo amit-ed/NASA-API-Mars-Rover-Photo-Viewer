@@ -12,7 +12,7 @@ router.post('/', function (req, res, next) {
         lastname: req.body.lastname.trim()
     });
 });
-//===================================================
+//============================================================
 //for each page to return to nasa page if connected
 router.get('/', function (req, res, next) {
     res.redirect('/');
