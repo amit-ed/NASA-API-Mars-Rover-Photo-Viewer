@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="caec2fb9-e8db-413b-806a-49ccd8fa97d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/password.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/password.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/database.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -39,7 +39,9 @@
       <workItem from="1666352987744" duration="1814000" />
       <workItem from="1666354885337" duration="1712000" />
       <workItem from="1666359817960" duration="13266000" />
-      <workItem from="1666455433782" duration="16171000" />
+      <workItem from="1666455433782" duration="19422000" />
+      <workItem from="1667556515291" duration="708000" />
+      <workItem from="1667811540004" duration="1584000" />
     </task>
     <servers />
   </component>
